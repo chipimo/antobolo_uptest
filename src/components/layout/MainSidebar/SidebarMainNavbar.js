@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Navbar, NavbarBrand } from "shards-react";
-
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
 import { Dispatcher, Constants } from "../../../flux";
 
 class SidebarMainNavbar extends React.Component {
@@ -40,18 +41,21 @@ class SidebarMainNavbar extends React.Component {
               />
               {!hideLogoText && (
                 <span className="d-none d-md-inline ml-1">
-                  Antobolo
+                  Antobolo Explorer
                 </span>
               )}
             </div>
           </NavbarBrand>
           {/* eslint-disable-next-line */}
-          <a
-            className="toggle-sidebar d-sm-inline d-md-none d-lg-none"
+         
+          <IconButton
             onClick={this.handleToggleSidebar}
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
           >
-            <i className="material-icons">&#xE5C4;</i>
-          </a>
+            <MenuIcon />
+          </IconButton>
         </Navbar>
       </div>
     );
