@@ -1,0 +1,15 @@
+{
+  "short_name": "Antobolo",
+  "name": "Books, Newspapers, Assignments",
+  "icons": [
+    {
+      "src": "./assets/images/logos/LOGO.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#308840",
+  "background_color": "#ffffff"
+}
