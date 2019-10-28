@@ -47,8 +47,9 @@ class SidebarMainNavbar extends React.Component {
             </div>
           </NavbarBrand>
           {/* eslint-disable-next-line */}
-         
+
           <IconButton
+            className="toggle-sidebar d-sm-inline d-md-none d-lg-none"
             onClick={this.handleToggleSidebar}
             edge="start"
             color="inherit"
