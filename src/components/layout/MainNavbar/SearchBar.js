@@ -24,6 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     display: "none",
+    color:"#ccc",
     [theme.breakpoints.up("sm")]: {
       display: "block"
     }
@@ -94,7 +95,7 @@ function SearchBar(props) {
           </IconButton>
 
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            Antobolo Search 
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
