@@ -65,9 +65,12 @@ export default class UserActions extends React.Component {
       );
     } else {
       return (
-        <div style={{ padding: 18 }}>
+        <div style={{ padding: 18, display:'flex' }}>
           <Button type="primary" shape="round" icon="user" size="small">
-            Sign in
+            Login
+          </Button>
+          <Button type="link" size="small">
+            Sign up
           </Button>
         </div>
       );
