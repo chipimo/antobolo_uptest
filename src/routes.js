@@ -5,54 +5,104 @@ import { Redirect } from "react-router-dom";
 import { DefaultLayout } from "./layouts";
 
 // Route Views
-import BlogOverview from "./views/BlogOverview";
-import UserProfileLite from "./views/UserProfileLite";
-import AddNewPost from "./views/AddNewPost";
-import Errors from "./views/Errors";
+import BlogOverview from "./views/Blog/BlogOverview";
+import AddNewPost from "./views/Blog/AddNewPost";
 import ComponentsOverview from "./views/ComponentsOverview";
-import Tables from "./views/Tables";
-import BlogPosts from "./views/BlogPosts";
+import BlogPosts from "./views/Blog/BlogPosts";
+
+// Main comps
+import UserProfileLite from "./views/Profile/UserProfileLite";
+import Assignments from "./views/Assignments";
+import Books from "./views/Books";
+import Explorer from "./views/Explorer";
+import Newspapers from "./views/Newspapers";
+import Pastpapers from "./views/Pastpapers";
+import UserStore from "./views/UserStore";
+import WishList from "./views/WishList";
+import Login from "./views/Auth/Login";
+import SignUp from "./views/Auth/SignUp";
+import Profile from "./views/Profile";
+import PrivacyPolicy from "./views/PrivacyPolicy";
+import TermsConditions from "./views/TermsConditions";
+import About from "./views/About";
+import Contact from "./views/Contact/Contact";
 
 export default [
   {
     path: "/",
     exact: true,
     layout: DefaultLayout,
-    component: () => <Redirect to="/blog-overview" />
+    component: () => <Redirect to="/explorer-overview" />
   },
   {
-    path: "/blog-overview",
+    path: "/explorer-overview",
     layout: DefaultLayout,
-    component: BlogOverview
+    component: Explorer
+  },
+  {
+    path: "/assignments",
+    layout: DefaultLayout,
+    component: Assignments
+  },
+  {
+    path: "/book-store",
+    layout: DefaultLayout,
+    component: Books
+  },
+  {
+    path: "/news-papers",
+    layout: DefaultLayout,
+    component: Newspapers
+  },
+  {
+    path: "/past-papers",
+    layout: DefaultLayout,
+    component: Pastpapers
+  },
+  {
+    path: "/user-store",
+    layout: DefaultLayout,
+    component: UserStore
+  },
+  {
+    path: "/wish-list",
+    layout: DefaultLayout,
+    component: WishList
+  },
+  {
+    path: "/login",
+    layout: DefaultLayout,
+    component: Login
+  },
+  {
+    path: "/sign-up",
+    layout: DefaultLayout,
+    component: SignUp
   },
   {
     path: "/user-profile-lite",
     layout: DefaultLayout,
-    component: UserProfileLite
+    component: Profile
   },
   {
-    path: "/add-new-post",
+    path: "/privacy-policy",
     layout: DefaultLayout,
-    component: AddNewPost
+    component: PrivacyPolicy
   },
   {
-    path: "/errors",
+    path: "/terms-conditions",
     layout: DefaultLayout,
-    component: Errors
+    component: TermsConditions
   },
   {
-    path: "/components-overview",
+    path: "/about",
     layout: DefaultLayout,
-    component: ComponentsOverview
+    component: About
   },
   {
-    path: "/tables",
+    path: "/contact",
     layout: DefaultLayout,
-    component: Tables
+    component: Contact
   },
-  {
-    path: "/blog-posts",
-    layout: DefaultLayout,
-    component: BlogPosts
-  }
+ 
 ];

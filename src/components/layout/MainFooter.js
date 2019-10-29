@@ -39,27 +39,23 @@ MainFooter.propTypes = {
 
 MainFooter.defaultProps = {
   contained: false,
-  copyright: "Copyright © 2018 DesignRevision",
+  copyright: "Copyright © 2019 Antobolo",
   menuItems: [
     {
-      title: "Home",
-      to: "#"
+      title: "Privacy Policy",
+      to: "/privacy-policy"
     },
     {
-      title: "Services",
-      to: "#"
+      title: "Terms & Conditions",
+      to: "/terms-conditions"
     },
     {
       title: "About",
-      to: "#"
+      to: "/about"
     },
     {
-      title: "Products",
-      to: "#"
-    },
-    {
-      title: "Blog",
-      to: "#"
+      title: "Contact",
+      to: "/contact"
     }
   ]
 };
