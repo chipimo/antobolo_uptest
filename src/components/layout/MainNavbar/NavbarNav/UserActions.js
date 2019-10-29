@@ -9,7 +9,7 @@ import {
   NavItem,
   NavLink
 } from "shards-react";
-import { Button } from "antd";
+import { Button, Radio, Icon } from "antd";
 
 export default class UserActions extends React.Component {
   constructor(props) {
@@ -65,8 +65,10 @@ export default class UserActions extends React.Component {
       );
     } else {
       return (
-        <div style={{padding:18}}>
-          <Button type="primary">Sign in</Button>
+        <div style={{ padding: 18 }}>
+          <Button type="primary" shape="round" icon="user" size="small">
+            Sign in
+          </Button>
         </div>
       );
     }

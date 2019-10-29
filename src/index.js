@@ -2,12 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-// styles 
-import 'antd/dist/antd.css';
-import './assets/styles/bootstrap/all.min.css';
-import './assets/styles/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
-
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
