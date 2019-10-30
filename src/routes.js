@@ -104,5 +104,10 @@ export default [
     layout: DefaultLayout,
     component: Contact
   },
+  {
+    path: "/comps",
+    layout: DefaultLayout,
+    component: ComponentsOverview
+  },
  
 ];

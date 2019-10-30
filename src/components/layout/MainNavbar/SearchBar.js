@@ -79,7 +79,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function SearchBar(props) {
-  const classes = useStyles();
+  const classes = useStyles(); 
 
   return (
     <div>

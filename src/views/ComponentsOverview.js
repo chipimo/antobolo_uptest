@@ -96,7 +96,7 @@ const ComponentsOverview = () => (
               {/* Forms & Form Validation */}
               <ListGroupItem className="p-3">
                 <Row>
-                  <Forms />
+                  <Forms /> 
                   <FormValidation />
                 </Row>
               </ListGroupItem>

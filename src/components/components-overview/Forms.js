@@ -11,7 +11,7 @@ import {
   InputGroupText
 } from "shards-react";
 
-const Forms = () => (
+const Forms = () => ( 
   <Col sm="12" md="6">
     <strong className="text-muted d-block mb-2">Forms</strong>
     <Form>
