@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, CardHeader } from "shards-react";
+import { Card, Col, Button } from "shards-react";
 import Login from "./Login";
 
 export default function UserAuth() {
@@ -20,7 +20,34 @@ export default function UserAuth() {
           className="mb-4"
         >
           <div style={{ width: "100%", display: "flex" }}>
-            <div style={{ width: "40%", height: 450 }}>ff</div>
+            <div
+              style={{
+                width: "40%",
+                height: 450,
+                display: "flex",
+                justifyContent: "center"
+              }}
+            >
+              <div style={{ marginTop: 90 }}>
+                <img
+                  id="main-logo"
+                  className="d-inline-block align-top mr-1"
+                  style={{ maxWidth: "200px" }}
+                  src={require("../../images/LOGO-whait.png")}
+                  alt="Antobolo"
+                />
+              <div style={{marginTop:50, marginLeft:20}}>
+                <Button
+                  pill
+                  outline
+                  size="sm"
+                  className="mb-4"
+                >
+                  Login with Facebook
+                </Button>
+              </div>
+              </div>
+            </div>
             <div style={{ backgroundColor: "#fff", width: "60%" }}>
               <Login />
             </div>
