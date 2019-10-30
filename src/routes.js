@@ -26,6 +26,7 @@ import PrivacyPolicy from "./views/PrivacyPolicy";
 import TermsConditions from "./views/TermsConditions";
 import About from "./views/About";
 import Contact from "./views/Contact/Contact";
+import Page404 from "./views/404Error/404Error";
 
 export default [
   {
@@ -105,9 +106,13 @@ export default [
     component: Contact
   },
   {
+    path: null,
+    layout: DefaultLayout,
+    component: Page404
+  },
+  {
     path: "/comps",
     layout: DefaultLayout,
     component: ComponentsOverview
-  },
- 
+  }
 ];
