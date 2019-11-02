@@ -68,8 +68,8 @@ function UserActions(props) {
     );
   } else {
     return (
-      <div style={{ display: "flex" }}>
-        <div style={{ marginTop: 10 }}>
+      <div>
+        <div style={{ height:"100%"}}>
           <Button
             onClick={() => handleClickOpen()}
             pill

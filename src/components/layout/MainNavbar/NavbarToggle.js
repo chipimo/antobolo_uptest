@@ -3,6 +3,7 @@ import React from "react";
 import { Dispatcher, Constants } from "../../../flux";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import MobileSearchBar from "./NavbarNav/SearchFunction";
 
 class NavbarToggle extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class NavbarToggle extends React.Component {
     return (
       <nav className="nav">
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-
+        <div style={{display:"flex", justifyContent:"space-between"}}>
         <IconButton
           onClick={this.handleClick}
           className="nav-link nav-link-icon toggle-sidebar d-sm-inline d-md-inline d-lg-none text-center"
@@ -31,6 +32,8 @@ class NavbarToggle extends React.Component {
         >
           <MenuIcon />
         </IconButton>
+         <MobileSearchBar/>
+         </div>
       </nav>
     );
   }

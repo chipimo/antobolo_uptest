@@ -21,10 +21,10 @@ export default function UserAuth() {
           className="mb-4"
         >
           {isMobile ? (
-            <div style={{ width: "100%", display: "flex" }}>
+            <div style={{ width: "100%", display: "flex", backgroundColor:"#cfd8dc" }}>
               <div
                 style={{
-                  width: "40%",
+                  width: "100%",
                   height: 450,
                   display: "flex",
                   justifyContent: "center"
@@ -36,7 +36,7 @@ export default function UserAuth() {
               </div>
             </div>
           ) : (
-            <div style={{ width: "100%", display: "flex" }}>
+            <div style={{ width: "100%", display: "flex"}}>
               <div
                 style={{
                   width: "40%",
