@@ -105,11 +105,6 @@ export default [
     layout: DefaultLayout,
     component: Contact
   },
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> 8baef652f74061cee9aa8896675fdd5e33fe0cee
   {
     path: "/comps",
     layout: DefaultLayout,
