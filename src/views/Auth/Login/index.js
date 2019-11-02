@@ -5,6 +5,7 @@ import Email from "@material-ui/icons/Email";
 import LockOpen from "@material-ui/icons/LockOpen";
 import { FormCheckbox } from "shards-react";
 import { Button } from "antd";
+import { isMobile } from "react-device-detect";
 
 function Login() {
   return (
@@ -20,7 +21,7 @@ function Login() {
       <h6>
         Don't have an account? <a style={{ color: "green" }}>Sing up free!</a>
       </h6>
-      <div style={{ width: "70%", margin: "auto", marginTop: 50 }}>
+      <div style={{ width: isMobile? "100%": "70%", margin: "auto", marginTop: 50 }}>
         <TextField
           fullWidth
           id="input-with-icon-textfield"
