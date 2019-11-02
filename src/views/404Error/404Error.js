@@ -1,4 +1,6 @@
 import React from 'react'
+import Lottie from 'react-lottie';
+// import * as animationData from './pinjump.json'
 
 export default function Page404() {
     return (

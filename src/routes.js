@@ -105,11 +105,7 @@ export default [
     layout: DefaultLayout,
     component: Contact
   },
-  {
-    path: null,
-    layout: DefaultLayout,
-    component: Page404
-  },
+
   {
     path: "/comps",
     layout: DefaultLayout,

@@ -15,19 +15,6 @@ export default () => (
   <Router basename={process.env.REACT_APP_BASENAME || ""}>
     <div>
       {routes.map((route, index) => {
-        if (route.path === null) {
-          return (
-            <Route
-              component={withTracker(props => {
-                return (
-                  <route.layout {...props}>
-                    <route.component {...props} />
-                  </route.layout>
-                );
-              })}
-            />
-          );
-        }
         return (
           <Route
             key={index}
