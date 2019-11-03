@@ -49,7 +49,7 @@ const DefaultLayout = ({ children, noNavbar, noFooter }) => {
       >
         <div style={{backgroundColor:"#fafafa"}}>
         {!noNavbar && <MainNavbar />}
-        {showLogin? 
+        {/* {showLogin? 
         <Container fluid className="px-0">
                 <Alert theme="success" className="mb-0">
                 <p> <i className="fa fa-info mx-2"></i> How you doin'? Get the best experience by Login or register for free </p>
@@ -63,7 +63,7 @@ const DefaultLayout = ({ children, noNavbar, noFooter }) => {
                 </div>
               </Alert>
            </Container>
-           : null }
+           : null } */}
         {children}
         {!noFooter && <MainFooter />}
         </div>

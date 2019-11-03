@@ -7,6 +7,7 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Background from "../../images/banner/level-up.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -50,11 +51,14 @@ function Explorer() {
                 height: 210,
                 width: "100%",
                 borderRadius: 10,
-                backgroundColor: "#eeeeee"
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundImage: `url(${Background})`,
+                paddingLeft: 30
               }}
             >
-              <div style={{ height: 90 }}></div>
-              <div style={{ padding: 10 }}>
+              <div style={{ padding: 10, paddingTop: 30 }}>
                 <h5 style={{ color: "green", margin: 0, padding: 0 }}>
                   Antobolo Level up{" "}
                 </h5>
@@ -62,7 +66,7 @@ function Explorer() {
                   Get 2 points with every purchase you make{" "}
                 </p>
               </div>
-              <Button theme="success" outline pill size="sm" className="mb-2">
+              <Button theme="secondary" pill size="sm" className="mb-2">
                 <i className="material-icons mr-1">person_add</i>Level up now
               </Button>
             </div>
