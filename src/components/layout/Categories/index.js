@@ -8,8 +8,9 @@ import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
 import Typography from "@material-ui/core/Typography";
 import MailIcon from "@material-ui/icons/Mail";
-import DeleteIcon from "@material-ui/icons/Delete";
-import Label from "@material-ui/icons/Label";
+import InsertDriveFile from "@material-ui/icons/InsertDriveFile";
+import Book from "@material-ui/icons/Book";
+import Assignment from "@material-ui/icons/Assignment";
 import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
 import InfoIcon from "@material-ui/icons/Info";
 import ForumIcon from "@material-ui/icons/Forum";
@@ -64,7 +65,6 @@ function StyledTreeItem(props) {
   const classes = useTreeItemStyles();
   const {
     labelText,
-    labelIcon: LabelIcon,
     labelInfo,
     color,
     bgColor,
@@ -75,7 +75,6 @@ function StyledTreeItem(props) {
     <TreeItem
       label={
         <div className={classes.labelRoot}>
-          <LabelIcon color="inherit" className={classes.labelIcon} />
           <Typography variant="body2" className={classes.labelText}>
             {labelText}
           </Typography>
@@ -132,7 +131,7 @@ export default function Categories() {
       }}
     >
       <Card
-        style={{ backgroundColor: "#ededed", height: "98%" }}
+        style={{ backgroundColor: "#F3F3F3", height: "98%" }}
         small
         className="mb-12"
       >
@@ -142,33 +141,28 @@ export default function Categories() {
               style={{ fontSize: 20, marginRight: 15, color: "green" }}
               className="material-icons"
             >
-              assessment
+              school
             </i>
             <h6 className="m-0">Categories</h6>
           </div>
         </CardHeader>
-        <Scrollbar style={{ height: "90%", width: "100%" }}>
+        <Scrollbar style={{ height: "90%", width: "100%", paddingBottom: 10 }}>
           <TreeView
             className={classes.root}
-            defaultExpanded={["3"]}
+            defaultExpanded={["1"]}
             defaultCollapseIcon={<ArrowDropDownIcon />}
             defaultExpandIcon={<ArrowRightIcon />}
             defaultEndIcon={<div style={{ width: 24 }} />}
           >
+            {/* Assignments ==== */}
             <StyledTreeItem
               nodeId="1"
-              labelText="All Mail"
-              labelIcon={MailIcon}
-            />
-            <StyledTreeItem
-              nodeId="2"
-              labelText="Trash"
-              labelIcon={DeleteIcon}
-            />
-            <StyledTreeItem nodeId="3" labelText="Categories" labelIcon={Label}>
+              labelText="Assignments"
+              labelIcon={"assignment"}
+            >
               <StyledTreeItem
                 nodeId="5"
-                labelText="Social"
+                labelText="Agricultural Sciences"
                 labelIcon={SupervisorAccountIcon}
                 labelInfo="90"
                 color="#1a73e8"
@@ -176,7 +170,7 @@ export default function Categories() {
               />
               <StyledTreeItem
                 nodeId="6"
-                labelText="Updates"
+                labelText="Education"
                 labelIcon={InfoIcon}
                 labelInfo="2,294"
                 color="#e3742f"
@@ -184,7 +178,7 @@ export default function Categories() {
               />
               <StyledTreeItem
                 nodeId="7"
-                labelText="Forums"
+                labelText="Engineering"
                 labelIcon={ForumIcon}
                 labelInfo="3,566"
                 color="#a250f5"
@@ -192,14 +186,115 @@ export default function Categories() {
               />
               <StyledTreeItem
                 nodeId="8"
-                labelText="Promotions"
+                labelText="Health Sciences"
+                labelIcon={LocalOfferIcon}
+                labelInfo="733"
+                color="#3c8039"
+                bgColor="#e6f4ea"
+              />
+              <StyledTreeItem
+                nodeId="9"
+                labelText="Business & Management"
+                labelIcon={ForumIcon}
+                labelInfo="3,566"
+                color="#a250f5"
+                bgColor="#f3e8fd"
+              />
+              <StyledTreeItem
+                nodeId="10"
+                labelText="Computer Science"
+                labelIcon={LocalOfferIcon}
+                labelInfo="733"
+                color="#3c8039"
+                bgColor="#e6f4ea"
+              />
+              <StyledTreeItem
+                nodeId="11"
+                labelText="Medicine & Health"
                 labelIcon={LocalOfferIcon}
                 labelInfo="733"
                 color="#3c8039"
                 bgColor="#e6f4ea"
               />
             </StyledTreeItem>
-            <StyledTreeItem nodeId="4" labelText="History" labelIcon={Label} />
+
+            {/* Past papers ==== */}
+
+            <StyledTreeItem
+              nodeId="2"
+              labelText="Past Papers"
+              labelIcon={InsertDriveFile}
+            >
+              <StyledTreeItem
+                nodeId="5"
+                labelText="Arts, Design"
+                labelIcon={SupervisorAccountIcon}
+                labelInfo="90"
+                color="#1a73e8"
+                bgColor="#e8f0fe"
+              />
+              <StyledTreeItem
+                nodeId="6"
+                labelText="Education & Training"
+                labelIcon={InfoIcon}
+                labelInfo="2,294"
+                color="#e3742f"
+                bgColor="#fcefe3"
+              />
+              <StyledTreeItem
+                nodeId="7"
+                labelText="Journalism & Media"
+                labelIcon={ForumIcon}
+                labelInfo="3,566"
+                color="#a250f5"
+                bgColor="#f3e8fd"
+              />
+              <StyledTreeItem
+                nodeId="8"
+                labelText="Law"
+                labelIcon={LocalOfferIcon}
+                labelInfo="733"
+                color="#3c8039"
+                bgColor="#e6f4ea"
+              />
+            </StyledTreeItem>
+
+            {/* Books ==== */}
+
+            <StyledTreeItem nodeId="2" labelText="Books" labelIcon={Book}>
+              <StyledTreeItem
+                nodeId="5"
+                labelText="Arts, Design"
+                labelIcon={SupervisorAccountIcon}
+                labelInfo="90"
+                color="#1a73e8"
+                bgColor="#e8f0fe"
+              />
+              <StyledTreeItem
+                nodeId="6"
+                labelText="Education & Training"
+                labelIcon={InfoIcon}
+                labelInfo="2,294"
+                color="#e3742f"
+                bgColor="#fcefe3"
+              />
+              <StyledTreeItem
+                nodeId="7"
+                labelText="Journalism & Media"
+                labelIcon={ForumIcon}
+                labelInfo="3,566"
+                color="#a250f5"
+                bgColor="#f3e8fd"
+              />
+              <StyledTreeItem
+                nodeId="8"
+                labelText="Law"
+                labelIcon={LocalOfferIcon}
+                labelInfo="733"
+                color="#3c8039"
+                bgColor="#e6f4ea"
+              />
+            </StyledTreeItem>
           </TreeView>
         </Scrollbar>
       </Card>

@@ -1,0 +1,38 @@
+{
+  "categories": [
+    {
+      "path": "/assignments",
+      "courses": [
+        {
+          "labelText": "Agricultural Sciences",
+          "labelInfo": "56",
+          "color": "#1a73e8",
+          "bgColor": "#e8f0fe"
+        },
+        {
+          "labelText": "Education",
+          "labelInfo": "56",
+          "color": "#e3742f",
+          "bgColor": "#fcefe3"
+        }
+      ]
+    },
+    {
+      "path": "/book-store",
+      "courses": [
+        {
+          "labelText": "Computer Science",
+          "labelInfo": "56",
+          "color": "#1a73e8",
+          "bgColor": "#e8f0fe"
+        },
+        {
+          "labelText": "Medicine & Health",
+          "labelInfo": "56",
+          "color": "#e3742f",
+          "bgColor": "#fcefe3"
+        }
+      ]
+    }
+  ]
+}
