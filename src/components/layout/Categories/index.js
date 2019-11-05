@@ -111,7 +111,16 @@ export default function Categories() {
   const [expanded, setExpanded] = React.useState(
     pathname === "/explorer-overview" ? "assignments" : ""
   );
+  const [isSet, setIsSet] = React.useState(true);
+
   const classes = useStyles();
+
+  let setExpandedPath = (path, id) => {
+    if ((pathname === path) & isSet) {
+      setExpanded(id);
+      setIsSet(false);
+    }
+  };
 
   return (
     <div
@@ -149,7 +158,7 @@ export default function Categories() {
           >
             {categories.map(item => {
               if (pathname === item.path) {
-                setExpanded(item.id);
+                setExpandedPath(item.path,item.id);
                 return (
                   <StyledTreeItem
                     nodeId={item.id}
