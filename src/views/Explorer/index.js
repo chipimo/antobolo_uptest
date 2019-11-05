@@ -46,7 +46,7 @@ function Explorer() {
                 height: 210,
                 width: "100%",
                 borderRadius: 10,
-                backgroundPosition: "center",
+                backgroundPosition: isMobile?"20% 50%":"center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundImage: `url(${Background})`,
