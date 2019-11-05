@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Container, Card, CardHeader, Button } from "shards-react";
+import { Container, Card, Button } from "shards-react";
 import { isMobile } from "react-device-detect";
 import { makeStyles } from "@material-ui/core/styles";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Background from "../../images/banner/level-up.png";
 
 const useStyles = makeStyles(theme => ({
@@ -20,7 +16,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function Explorer() {
-  const [PostListOne, SetPostListOne] = useState();
+  const [PostListOne, SetPostListOne] = useState(false);
   const classes = useStyles();
 
   useEffect(() => {
@@ -36,11 +32,10 @@ function Explorer() {
     <div
       style={{
         paddingTop: 10,
-        paddingBottom: 20,
-        display: isMobile ? "block" : "flex"
+        paddingBottom: 20
       }}
     >
-      <div style={{ width: isMobile ? "100%" : "70%" }}>
+      <div>
         <Container fluid className="main-content-container px-14">
           <div>
             <div
@@ -51,7 +46,7 @@ function Explorer() {
                 height: 210,
                 width: "100%",
                 borderRadius: 10,
-                backgroundPosition: "center",
+                backgroundPosition: isMobile?"20% 50%":"center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundImage: `url(${Background})`,
@@ -74,9 +69,12 @@ function Explorer() {
             <div style={{ marginTop: 20 }}>
               <div>
                 <strong>
-                  <h5 style={{ color: "green", margin: 0, padding: 0 }}>
+                  <Typography
+                    variant="h6"
+                    style={{ color: "green", margin: 0, padding: 0 }}
+                  >
                     Bestsellers
-                  </h5>
+                  </Typography>
                 </strong>
                 <p style={{ margin: 0, padding: 0 }}>This year's top sellers</p>
               </div>
@@ -89,66 +87,6 @@ function Explorer() {
             </div>
           </div>
         </Container>
-      </div>
-      <div style={{ width: "28%" }}>
-        <Card style={{ backgroundColor: "#ededed" }} small className="mb-12">
-          <CardHeader className="border-bottom">
-            <div style={{ display: "flex" }}>
-              <i
-                style={{ fontSize: 20, marginRight: 15, color: "green" }}
-                className="material-icons"
-              >
-                assessment
-              </i>
-              <h6 className="m-0">Categories</h6>
-            </div>
-          </CardHeader>
-          <ExpansionPanel>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography className={classes.heading}>Assignments</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography className={classes.heading}>
-                Expansion Panel 2
-              </Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel disabled>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel3a-content"
-              id="panel3a-header"
-            >
-              <Typography className={classes.heading}>
-                Disabled Expansion Panel
-              </Typography>
-            </ExpansionPanelSummary>
-          </ExpansionPanel>
-        </Card>
       </div>
     </div>
   );
