@@ -2,17 +2,17 @@ let categories = [
   {
     path: "/assignments",
     key:'Assignments',
-    id:'1',
+    id:'assignments',
     courses: [
       {
         labelText: "Agricultural Sciences",
         labelInfo: "56",
-        id:'1',
+        id:'course-1',
         color: "#1a73e8",
         bgColor: "#e8f0fe"
       },
       {
-        id:'2',
+        id:'course-2',
         labelText: "Education",
         labelInfo: "56",
         color: "#e3742f",
@@ -23,17 +23,17 @@ let categories = [
   {
     path: "/book-store",
     key: "Books",
-    id:'2',
+    id:'books',
     courses: [
       {
-        id:'1',
+        id:'course-3',
         labelText: "Computer Science",
         labelInfo: "56",
         color: "#1a73e8",
         bgColor: "#e8f0fe"
       },
       {
-        id:'2',
+        id:'course-4',
         labelText: "Medicine & Health",
         labelInfo: "56",
         color: "#e3742f",

@@ -104,8 +104,13 @@ const useStyles = makeStyles({
 });
 
 export default function Categories() {
-  const [open, setOpen] = React.useState(true);
   const { pathname } = useLocation();
+  const [path, setPath] = React.useState(
+    pathname === "/explorer-overview" ? false : true
+  );
+  const [expanded, setExpanded] = React.useState(
+    pathname === "/explorer-overview" ? "assignments" : ""
+  );
   const classes = useStyles();
 
   return (
@@ -137,18 +142,14 @@ export default function Categories() {
         <Scrollbar style={{ height: "90%", width: "100%", paddingBottom: 10 }}>
           <TreeView
             className={classes.root}
-            defaultExpanded={["1"]}
+            defaultExpanded={[expanded]}
             defaultCollapseIcon={<ArrowDropDownIcon />}
             defaultExpandIcon={<ArrowRightIcon />}
             defaultEndIcon={<div style={{ width: 24 }} />}
           >
             {categories.map(item => {
-              console.log(item.path);
-              console.log("=========");
-              
-              console.log(pathname);
-              
               if (pathname === item.path) {
+                setExpanded(item.id);
                 return (
                   <StyledTreeItem
                     nodeId={item.id}
@@ -157,6 +158,7 @@ export default function Categories() {
                   >
                     {item.courses.map(course => (
                       <StyledTreeItem
+                        key={course.id}
                         nodeId={course.id}
                         labelText={course.labelText}
                         labelInfo={course.labelInfo}
@@ -171,17 +173,20 @@ export default function Categories() {
                   <StyledTreeItem
                     nodeId={item.id}
                     key={item.key}
-                    labelText={item.key}
+                    labelText={path ? "" : item.key}
                   >
-                    {/* {item.courses.map(course => (
-                      <StyledTreeItem
-                        nodeId={course.id}
-                        labelText={course.labelText}
-                        labelInfo={course.labelInfo}
-                        color={course.color}
-                        bgColor={course.bgColor}
-                      />
-                    ))} */}
+                    {path
+                      ? null
+                      : item.courses.map(course => (
+                          <StyledTreeItem
+                            key={course.id}
+                            nodeId={course.id}
+                            labelText={course.labelText}
+                            labelInfo={course.labelInfo}
+                            color={course.color}
+                            bgColor={course.bgColor}
+                          />
+                        ))}
                   </StyledTreeItem>
                 );
               }
