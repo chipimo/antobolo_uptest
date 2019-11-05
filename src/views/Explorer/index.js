@@ -46,11 +46,11 @@ function Explorer() {
                 height: 210,
                 width: "100%",
                 borderRadius: 10,
-                backgroundPosition: isMobile?"20% 50%":"center",
+                backgroundPosition: isMobile?"90% 50%":"center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundImage: `url(${Background})`,
-                paddingLeft: 30
+                paddingLeft: isMobile? 15:30
               }}
             >
               <div style={{ padding: 10, paddingTop: 30 }}>
@@ -79,10 +79,35 @@ function Explorer() {
                 <p style={{ margin: 0, padding: 0 }}>This year's top sellers</p>
               </div>
 
-              <div style={{ paddingTop: 6 }}>
+              <div style={{ paddingTop: 6, display:"flex", justifyContent:"space-between", overflowX:"auto" }}>
+              <div style={{margin:10}}>
                 <Card small className="mb-4">
-                  books
+                  <div style={{minWidth:150, height:250}}>
+                     Assignments 
+                  </div>
                 </Card>
+               </div>
+               <div style={{margin:10}}>
+                <Card small className="mb-4">
+                  <div style={{minWidth:150, height:250}}>
+                     Assignments 
+                  </div>
+                </Card>
+               </div>
+                <div style={{margin:10}}>
+                <Card small className="mb-4">
+                  <div style={{minWidth:150, height:250}}>
+                     Assignments 
+                  </div>
+                </Card>
+               </div>
+               <div style={{margin:10}}>
+                <Card small className="mb-4">
+                  <div style={{minWidth:150, height:250}}>
+                     Assignments 
+                  </div>
+                </Card>
+               </div>
               </div>
             </div>
           </div>
