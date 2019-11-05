@@ -3,20 +3,14 @@ import { Card, CardHeader } from "shards-react";
 import { makeStyles } from "@material-ui/core/styles";
 import Scrollbar from "react-scrollbars-custom";
 import PropTypes from "prop-types";
-
+import { useLocation } from "react-router-dom";
 import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
 import Typography from "@material-ui/core/Typography";
-import MailIcon from "@material-ui/icons/Mail";
-import InsertDriveFile from "@material-ui/icons/InsertDriveFile";
-import Book from "@material-ui/icons/Book";
-import Assignment from "@material-ui/icons/Assignment";
-import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
-import InfoIcon from "@material-ui/icons/Info";
-import ForumIcon from "@material-ui/icons/Forum";
-import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import categories from "./data";
+import { Item } from "rc-menu";
 
 const useTreeItemStyles = makeStyles(theme => ({
   root: {
@@ -63,13 +57,7 @@ const useTreeItemStyles = makeStyles(theme => ({
 
 function StyledTreeItem(props) {
   const classes = useTreeItemStyles();
-  const {
-    labelText,
-    labelInfo,
-    color,
-    bgColor,
-    ...other
-  } = props;
+  const { labelText, labelInfo, color, bgColor, ...other } = props;
 
   return (
     <TreeItem
@@ -117,7 +105,7 @@ const useStyles = makeStyles({
 
 export default function Categories() {
   const [open, setOpen] = React.useState(true);
-
+  const { pathname } = useLocation();
   const classes = useStyles();
 
   return (
@@ -154,147 +142,50 @@ export default function Categories() {
             defaultExpandIcon={<ArrowRightIcon />}
             defaultEndIcon={<div style={{ width: 24 }} />}
           >
-            {/* Assignments ==== */}
-            <StyledTreeItem
-              nodeId="1"
-              labelText="Assignments"
-              labelIcon={"assignment"}
-            >
-              <StyledTreeItem
-                nodeId="5"
-                labelText="Agricultural Sciences"
-                labelIcon={SupervisorAccountIcon}
-                labelInfo="90"
-                color="#1a73e8"
-                bgColor="#e8f0fe"
-              />
-              <StyledTreeItem
-                nodeId="6"
-                labelText="Education"
-                labelIcon={InfoIcon}
-                labelInfo="2,294"
-                color="#e3742f"
-                bgColor="#fcefe3"
-              />
-              <StyledTreeItem
-                nodeId="7"
-                labelText="Engineering"
-                labelIcon={ForumIcon}
-                labelInfo="3,566"
-                color="#a250f5"
-                bgColor="#f3e8fd"
-              />
-              <StyledTreeItem
-                nodeId="8"
-                labelText="Health Sciences"
-                labelIcon={LocalOfferIcon}
-                labelInfo="733"
-                color="#3c8039"
-                bgColor="#e6f4ea"
-              />
-              <StyledTreeItem
-                nodeId="9"
-                labelText="Business & Management"
-                labelIcon={ForumIcon}
-                labelInfo="3,566"
-                color="#a250f5"
-                bgColor="#f3e8fd"
-              />
-              <StyledTreeItem
-                nodeId="10"
-                labelText="Computer Science"
-                labelIcon={LocalOfferIcon}
-                labelInfo="733"
-                color="#3c8039"
-                bgColor="#e6f4ea"
-              />
-              <StyledTreeItem
-                nodeId="11"
-                labelText="Medicine & Health"
-                labelIcon={LocalOfferIcon}
-                labelInfo="733"
-                color="#3c8039"
-                bgColor="#e6f4ea"
-              />
-            </StyledTreeItem>
-
-            {/* Past papers ==== */}
-
-            <StyledTreeItem
-              nodeId="2"
-              labelText="Past Papers"
-              labelIcon={InsertDriveFile}
-            >
-              <StyledTreeItem
-                nodeId="5"
-                labelText="Arts, Design"
-                labelIcon={SupervisorAccountIcon}
-                labelInfo="90"
-                color="#1a73e8"
-                bgColor="#e8f0fe"
-              />
-              <StyledTreeItem
-                nodeId="6"
-                labelText="Education & Training"
-                labelIcon={InfoIcon}
-                labelInfo="2,294"
-                color="#e3742f"
-                bgColor="#fcefe3"
-              />
-              <StyledTreeItem
-                nodeId="7"
-                labelText="Journalism & Media"
-                labelIcon={ForumIcon}
-                labelInfo="3,566"
-                color="#a250f5"
-                bgColor="#f3e8fd"
-              />
-              <StyledTreeItem
-                nodeId="8"
-                labelText="Law"
-                labelIcon={LocalOfferIcon}
-                labelInfo="733"
-                color="#3c8039"
-                bgColor="#e6f4ea"
-              />
-            </StyledTreeItem>
-
-            {/* Books ==== */}
-
-            <StyledTreeItem nodeId="2" labelText="Books" labelIcon={Book}>
-              <StyledTreeItem
-                nodeId="5"
-                labelText="Arts, Design"
-                labelIcon={SupervisorAccountIcon}
-                labelInfo="90"
-                color="#1a73e8"
-                bgColor="#e8f0fe"
-              />
-              <StyledTreeItem
-                nodeId="6"
-                labelText="Education & Training"
-                labelIcon={InfoIcon}
-                labelInfo="2,294"
-                color="#e3742f"
-                bgColor="#fcefe3"
-              />
-              <StyledTreeItem
-                nodeId="7"
-                labelText="Journalism & Media"
-                labelIcon={ForumIcon}
-                labelInfo="3,566"
-                color="#a250f5"
-                bgColor="#f3e8fd"
-              />
-              <StyledTreeItem
-                nodeId="8"
-                labelText="Law"
-                labelIcon={LocalOfferIcon}
-                labelInfo="733"
-                color="#3c8039"
-                bgColor="#e6f4ea"
-              />
-            </StyledTreeItem>
+            {categories.map(item => {
+              console.log(item.path);
+              console.log("=========");
+              
+              console.log(pathname);
+              
+              if (pathname === item.path) {
+                return (
+                  <StyledTreeItem
+                    nodeId={item.id}
+                    key={item.key}
+                    labelText={item.key}
+                  >
+                    {item.courses.map(course => (
+                      <StyledTreeItem
+                        nodeId={course.id}
+                        labelText={course.labelText}
+                        labelInfo={course.labelInfo}
+                        color={course.color}
+                        bgColor={course.bgColor}
+                      />
+                    ))}
+                  </StyledTreeItem>
+                );
+              } else {
+                return (
+                  <StyledTreeItem
+                    nodeId={item.id}
+                    key={item.key}
+                    labelText={item.key}
+                  >
+                    {/* {item.courses.map(course => (
+                      <StyledTreeItem
+                        nodeId={course.id}
+                        labelText={course.labelText}
+                        labelInfo={course.labelInfo}
+                        color={course.color}
+                        bgColor={course.bgColor}
+                      />
+                    ))} */}
+                  </StyledTreeItem>
+                );
+              }
+            })}
           </TreeView>
         </Scrollbar>
       </Card>
