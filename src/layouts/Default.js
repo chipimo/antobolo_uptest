@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Container, Row, Col, Button, Alert } from "shards-react";
+import { Container, Row, Col } from "shards-react";
 
 import MainNavbar from "../components/layout/MainNavbar/MainNavbar";
 import MainSidebar from "../components/layout/MainSidebar/MainSidebar";
@@ -75,8 +75,8 @@ const DefaultLayout = ({ children, noNavbar, noFooter }) => {
                 <div
                   style={{
                     width: "28%",
-                    marginLeft:10,
-                    height: "80vh",
+                    marginLeft: 10,
+                    height: "80vh"
                   }}
                 >
                   {<Categories />}

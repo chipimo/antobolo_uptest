@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 
 // Layout Types
-import { DefaultLayout } from "./layouts";
+import { DefaultLayout, ItemOver } from "./layouts";
 
 // Route Views
 import BlogOverview from "./views/Blog/BlogOverview";
@@ -27,6 +27,7 @@ import TermsConditions from "./views/TermsConditions";
 import About from "./views/About";
 import Contact from "./views/Contact/Contact";
 import Page404 from "./views/404Error/404Error";
+import ItemOverView from "./views/OverView";
 
 export default [
   {
@@ -59,6 +60,11 @@ export default [
     path: "/past-papers",
     layout: DefaultLayout,
     component: Pastpapers
+  },
+  {
+    path: "/item-over-view",
+    layout: ItemOver,
+    component: ItemOverView
   },
   {
     path: "/user-store",

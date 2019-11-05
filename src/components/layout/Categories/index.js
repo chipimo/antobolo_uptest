@@ -144,7 +144,7 @@ export default function Categories() {
               className="material-icons"
             >
               school
-            </i>
+            </i> 
             <h6 className="m-0">Categories</h6>
           </div>
         </CardHeader>

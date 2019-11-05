@@ -4,6 +4,8 @@ import { isMobile } from "react-device-detect";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Background from "../../images/banner/level-up.png";
+import cards from "./data";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,6 +20,7 @@ const useStyles = makeStyles(theme => ({
 function Explorer() {
   const [PostListOne, SetPostListOne] = useState(false);
   const classes = useStyles();
+  const history = useHistory();
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -46,11 +49,11 @@ function Explorer() {
                 height: 210,
                 width: "100%",
                 borderRadius: 10,
-                backgroundPosition: isMobile?"90% 50%":"center",
+                backgroundPosition: isMobile ? "90% 50%" : "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundImage: `url(${Background})`,
-                paddingLeft: isMobile? 15:30
+                paddingLeft: isMobile ? 15 : 30
               }}
             >
               <div style={{ padding: 10, paddingTop: 30 }}>
@@ -79,35 +82,69 @@ function Explorer() {
                 <p style={{ margin: 0, padding: 0 }}>This year's top sellers</p>
               </div>
 
-              <div style={{ paddingTop: 6, display:"flex", justifyContent:"space-between", overflowX:"auto" }}>
-              <div style={{margin:10}}>
-                <Card small className="mb-4">
-                  <div style={{minWidth:150, height:250}}>
-                     Assignments 
+              <div
+                className="custom-bar"
+                style={{
+                  paddingTop: 6,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  overflowX: "auto"
+                }}
+              >
+                {cards.map(items => (
+                  <div style={{ margin: 10 }}>
+                    <Card
+                      style={{ overflow: "hidden" }}
+                      small
+                      className="mb-4 card-haver"
+                      onClick={()=>history.push("/item-over-view")}
+                    >
+                      <div style={{ minWidth: 150, height: 270 }}>
+                        <div
+                          style={{
+                            height: 170,
+                            width: "100%",
+                            backgroundPosition: "50% 50%",
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                            backgroundImage: `url(${items.img})`
+                          }}
+                        ></div>
+                        <div style={{ padding: 3, paddingLeft: 5 }}>
+                          <Typography
+                            style={{ color: "green" }}
+                            variant="subtitle2"
+                          >
+                            {items.title}
+                          </Typography>
+                          <Typography
+                            style={{ color: "gary" }}
+                            variant="caption"
+                          >
+                            {items.author}
+                          </Typography>
+                          <div style={{ display: "flex" }}>
+                            {items.price === 0.0 ? (
+                              <Typography
+                                style={{ color: "gary" }}
+                                variant="caption"
+                              >
+                                Price free
+                              </Typography>
+                            ) : (
+                              <Typography
+                                style={{ color: "red" }}
+                                variant="caption"
+                              >
+                                Price K {items.price}.00
+                              </Typography>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
                   </div>
-                </Card>
-               </div>
-               <div style={{margin:10}}>
-                <Card small className="mb-4">
-                  <div style={{minWidth:150, height:250}}>
-                     Assignments 
-                  </div>
-                </Card>
-               </div>
-                <div style={{margin:10}}>
-                <Card small className="mb-4">
-                  <div style={{minWidth:150, height:250}}>
-                     Assignments 
-                  </div>
-                </Card>
-               </div>
-               <div style={{margin:10}}>
-                <Card small className="mb-4">
-                  <div style={{minWidth:150, height:250}}>
-                     Assignments 
-                  </div>
-                </Card>
-               </div>
+                ))}
               </div>
             </div>
           </div>
