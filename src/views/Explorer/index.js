@@ -93,7 +93,7 @@ function Explorer(props) {
                 }}
               >
                 {cards.map(items => (
-                  <div style={{ margin: 10 }}>
+                  <div key={items.id} style={{ margin: 10 }}>
                     <Card
                       style={{ overflow: "hidden" }}
                       small
@@ -101,7 +101,7 @@ function Explorer(props) {
                       onClick={() => {
                         props.dispatchEvent({
                           type: "CARDITEMS",
-                          payload: props.items
+                          payload: items
                         });
                         history.push("/item-over-view");
                       }}

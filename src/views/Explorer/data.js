@@ -19,7 +19,11 @@ let cards = [
       }
     ],
     stars: 3.3,
-    overview: "",
+    overview:
+      "body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit." +
+      "Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore" +
+      "consectetur, neque doloribus, cupiditate numquam dignissimos" +
+      "laborum fugiat deleniti? Eum quasi quidem quibusdam.",
     author: "Melvin chipimo",
     date: "2019-03-06",
     Language: "eng"
