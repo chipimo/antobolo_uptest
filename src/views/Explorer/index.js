@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Background from "../../images/banner/level-up.png";
 import cards from "./data";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Explorer() {
+function Explorer(props) {
   const [PostListOne, SetPostListOne] = useState(false);
   const classes = useStyles();
   const history = useHistory();
@@ -97,7 +98,13 @@ function Explorer() {
                       style={{ overflow: "hidden" }}
                       small
                       className="mb-4 card-haver"
-                      onClick={()=>history.push("/item-over-view")}
+                      onClick={() => {
+                        props.dispatchEvent({
+                          type: "CARDITEMS",
+                          payload: props.items
+                        });
+                        history.push("/item-over-view");
+                      }}
                     >
                       <div style={{ minWidth: 150, height: 270 }}>
                         <div
@@ -154,4 +161,19 @@ function Explorer() {
   );
 }
 
-export default Explorer;
+function mapStateToProps(state) {
+  return {
+    CardItem: state.CardItem
+  };
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    dispatchEvent: data => dispatch(data)
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Explorer);
