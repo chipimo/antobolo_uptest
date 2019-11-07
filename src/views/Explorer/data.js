@@ -1,6 +1,7 @@
 let cards = [
   {
     id: "card1",
+    type:"Assignment",
     title: "Matharmatics assignment 2011",
     img:
       "https://res.cloudinary.com/chawanangwa/image/upload/v1571129737/edexcel-maths-hight-tier-1mao2h-1-638_u9hkdv.jpg",
@@ -20,16 +21,19 @@ let cards = [
     ],
     stars: 3.3,
     overview:
-      "body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit." +
-      "Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore" +
-      "consectetur, neque doloribus, cupiditate numquam dignissimos" +
-      "laborum fugiat deleniti? Eum quasi quidem quibusdam.",
+      "Mathematics is essential in many fields, including natural " +
+      "science, engineering, medicine, finance, and the social sciences. " +
+      "Applied mathematics has led to entirely new mathematical disciplines, " +
+      "such as statistics and game theory. Mathematicians engage in pure mathematics " +
+      "(mathematics for its own sake) without having any application in mind, but practical " +
+      "applications for what began as pure mathematics are often discovered later.",
     author: "Melvin chipimo",
     date: "2019-03-06",
     Language: "eng"
   },
   {
     id: "card2",
+    type:"Assignment",
     title: "English assignment 2018",
     img:
       "https://res.cloudinary.com/chawanangwa/image/upload/v1571132071/largepreview_r7oj6c.png",
@@ -55,6 +59,7 @@ let cards = [
   },
   {
     id: "card3",
+    type:"Assignment",
     title: "English assignment 2019",
     img:
       "https://res.cloudinary.com/chawanangwa/image/upload/v1571129976/e710039cb661fd7b6063689b9c9c91c0_j9tzom.jpg",
@@ -80,6 +85,7 @@ let cards = [
   },
   {
     id: "card3",
+    type:"Assignment",
     title: "English assignment 2019",
     img:
       "https://res.cloudinary.com/chawanangwa/image/upload/v1571129976/e710039cb661fd7b6063689b9c9c91c0_j9tzom.jpg",
