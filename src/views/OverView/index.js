@@ -17,6 +17,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import { Document, Page } from 'react-pdf';
+import file from "./3200induction.pdf";
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -90,7 +91,7 @@ const classes = useStyles();
         
         <div>
         <Document
-          file="somefile.pdf"
+          file={file}
           onLoadSuccess={onDocumentLoadSuccess}
         >
           <Page pageNumber={pageNumber} />
