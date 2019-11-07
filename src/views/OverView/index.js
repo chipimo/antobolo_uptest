@@ -4,22 +4,6 @@ import { Card, Button } from "shards-react";
 import { connect } from "react-redux";
 import Typography from "@material-ui/core/Typography";
 import { isMobile } from "react-device-detect";
-
-<<<<<<< HEAD
-import { makeStyles } from '@material-ui/core/styles';
-import Dialog from '@material-ui/core/Dialog';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import Slide from '@material-ui/core/Slide';
-import { Document, Page } from 'react-pdf';
-import file from "./3200induction.pdf";
-=======
 import { makeStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -35,7 +19,6 @@ import { Divider, Icon } from "semantic-ui-react";
 import Rating from "@material-ui/lab/Rating";
 import Paper from "@material-ui/core/Paper";
 import Avatar from "@material-ui/core/Avatar";
->>>>>>> 2733a45f6e5f4d50670b69f30fdb9c55d970ae56
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -235,23 +218,14 @@ const ItemOverView = props => {
         </AppBar>
 
         <div>
-<<<<<<< HEAD
-        <Document
-          file={file}
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          <Page pageNumber={pageNumber} />
-        </Document>
-        <p>Page {pageNumber} of {numPages}</p>
-      </div>
-=======
+        
           <PDFViewer
             document={{
               url: "https://arxiv.org/pdf/quant-ph/0410100.pdf"
             }}
           />
         </div>
->>>>>>> 2733a45f6e5f4d50670b69f30fdb9c55d970ae56
+        
       </Dialog>
     </div>
   );
