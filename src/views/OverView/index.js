@@ -17,6 +17,9 @@ import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 import PDFViewer from "pdf-viewer-reactjs";
 import { Divider, Icon } from "semantic-ui-react";
+import Rating from "@material-ui/lab/Rating";
+import Paper from "@material-ui/core/Paper";
+import Avatar from "@material-ui/core/Avatar";
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -53,33 +56,77 @@ const ItemOverView = props => {
   return (
     <div style={{ paddingTop: 30, paddingLeft: 20, marginBottom: 40 }}>
       <div style={{ width: "100%", display: isMobile ? "block" : "flex" }}>
-        <Card style={{ width: isMobile ? "90%" : "25%" }}>
-          <Image src={props.CardItem.data.img} size="huge" />
-        </Card>
-        <div style={{ width: isMobile ? "90%" : "45%", marginLeft: 10 }}>
-          <div>
-            <Typography variant="h6" style={{ color: "green" }} gutterBottom>
-              {props.CardItem.data.title}
-            </Typography>
+        <div style={{ width: "75%" }}>
+          <div style={{ width: "100%", display: isMobile ? "block" : "flex" }}>
+            <Card style={{ width: isMobile ? "90%" : "35%" }}>
+              <Image src={props.CardItem.data.img} size="huge" />
+            </Card>
+            <div style={{ width: isMobile ? "90%" : "60%", marginLeft: 10 }}>
+              <div>
+                <Typography
+                  variant="h6"
+                  style={{ color: "green" }}
+                  gutterBottom
+                >
+                  {props.CardItem.data.title}
+                </Typography>
+              </div>
+              <div>
+                <Typography variant="body2" gutterBottom>
+                  By{" "}
+                  <em style={{ color: "green" }}>
+                    <strong>{props.CardItem.data.author}</strong>
+                  </em>
+                </Typography>
+              </div>
+              <div style={{ marginTop: 15 }}>
+                <Rating value={props.CardItem.data.stars} readOnly />
+              </div>
+              <div style={{ paddingRight: 13 }}>
+                <Divider />
+              </div>
+              <div style={{ marginTop: 20 }}>
+                <Typography variant="h5" gutterBottom>
+                  {props.CardItem.data.type} Overview
+                </Typography>
+                <Typography variant="body2" gutterBottom>
+                  {props.CardItem.data.overview}
+                </Typography>
+              </div>
+            </div>
           </div>
-          <div>
-            <Typography variant="body2" gutterBottom>
-              By{" "}
-              <em style={{ color: "green" }}>
-                <strong>{props.CardItem.data.author}</strong>
-              </em>
-            </Typography>
-          </div>
-          <div style={{ paddingRight: 13 }}>
-            <Divider />
-          </div>
-          <div style={{ marginTop: 20 }}>
-            <Typography variant="h5" gutterBottom>
-              {props.CardItem.data.type} Overview
-            </Typography>
-            <Typography variant="body2" gutterBottom>
-              {props.CardItem.data.overview}
-            </Typography>
+          <div style={{ marginTop: 20, paddingLeft: 10 }}>
+            <Paper
+              square
+              style={{
+                width: "96%",
+                borderStyle: "solid",
+                borderWidth: 1,
+                borderColor: "transparent",
+                borderTopColor: "green",
+                padding: 20
+              }}
+            >
+              <Typography variant="h6" gutterBottom>
+                Customer Reviews (3)
+              </Typography>
+              <div style={{ marginTop: 10 }}>
+                {props.CardItem.data.reviews.map(element => (
+                  <div key={element.id}>
+                    <div style={{ display: "flex" }}>
+                      <Avatar alt="Remy Sharp" src={element.profile} />
+                      <Typography
+                        style={{ marginTop: 5, marginLeft: 10 }}
+                        variant="body2"
+                      >
+                        {element.name}
+                      </Typography>
+                    </div>
+                    <div style={{margin:3, marginLeft:30}}>{element.comment}</div>
+                  </div>
+                ))}
+              </div>
+            </Paper>
           </div>
         </div>
         <div
@@ -131,10 +178,10 @@ const ItemOverView = props => {
               display: "flex"
             }}
           >
-            <div style={{color:'#6447BB'}}>
+            <div style={{ color: "#6447BB" }}>
               <Icon size="big" name="stripe card" />
             </div>
-            <div style={{color:'#6447BB'}}>
+            <div style={{ color: "#6447BB" }}>
               <Icon size="big" name="stripe card" />
             </div>
             <div style={{ color: "blue" }}>

@@ -9,8 +9,28 @@ let cards = [
     lastPrice: 3.0,
     reviews: [
       {
-        id: "uase123-40",
+        id: "uase123-10",
+        name: "Mwamba kunda",
+        profile:
+          "https://res.cloudinary.com/chawanangwa/image/upload/v1560390869/profile/412579932835186.jpg",
+        stars: 3.3,
+        comment: "This really helpful, i passed my exams ",
+        replys: {},
+        likes: 0
+      },
+      {
+        id: "uase123-30",
         name: "melvin musonda",
+        profile:
+          "https://res.cloudinary.com/chawanangwa/image/upload/v1560390869/profile/412579932835186.jpg",
+        stars: 3.3,
+        comment: "This really helpful, i passed my exams ",
+        replys: {},
+        likes: 0
+      },
+      {
+        id: "uase123-20",
+        name: "muma chama",
         profile:
           "https://res.cloudinary.com/chawanangwa/image/upload/v1560390869/profile/412579932835186.jpg",
         stars: 3.3,
