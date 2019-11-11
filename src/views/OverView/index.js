@@ -55,7 +55,7 @@ const ItemOverView = props => {
   return (
     <div style={{ paddingTop: 30, paddingLeft: 20, marginBottom: 40 }}>
       <div style={{ width: "100%", display: isMobile ? "block" : "flex" }}>
-        <div style={{ width: "75%" }}>
+        <div style={{ width: "95%", margin:"auto" }}>
           <div style={{ width: "100%", display: isMobile ? "block" : "flex" }}>
             <Card style={{ width: isMobile ? "90%" : "35%" }}>
               <Image src={props.CardItem.data.img} size="huge" />
@@ -85,6 +85,73 @@ const ItemOverView = props => {
                 <Divider />
               </div>
               <div style={{ marginTop: 20 }}>
+                {
+                   isMobile? <div
+          style={{
+            width: isMobile ? "90%" : "30%",
+            borderColor: "transparent",
+            borderLeftColor: isMobile ? "transparent" : "#DEDEDF",
+            borderStyle: "solid",
+            borderWidth: 1,
+            padding: 10,
+            paddingBottom:60,
+          }}
+        >
+          <div>
+            <Typography variant="button" display="block" gutterBottom>
+              Selected
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              Format: PDF file
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              Downloads: 300
+            </Typography>
+          </div>
+          <div style={{ marginTop: 20 }}>
+            <Typography style={{ color: "red" }} variant="h4" gutterBottom>
+              <strong style={{ fontSize: 20 }}>K</strong>{" "}
+              <strong>{props.CardItem.data.price}.00</strong>
+            </Typography>
+          </div>
+          <div>
+            <Button theme="" onClick={handleClickOpen}>
+              Preview pdf
+            </Button>
+          </div>
+          <div>
+            <Button theme="success">Buy now</Button>
+          </div>
+          <Divider />
+          <div style={{ marginTop: 15, width: "100%", textAlign: "center" }}>
+            <Typography variant="body2" gutterBottom>
+              We support
+            </Typography>
+          </div>
+          <div
+            style={{
+              marginTop: 15,
+              width: "100%",
+              justifyContent: "center",
+              display: "flex"
+            }}
+          >
+            <div style={{ color: "#6447BB" }}>
+              <Icon size="big" name="stripe card" />
+            </div>
+            <div style={{ color: "#6447BB" }}>
+              <Icon size="big" name="stripe card" />
+            </div>
+            <div style={{ color: "blue" }}>
+              <Icon size="big" name="paypal" />
+            </div>
+            <div style={{ color: "#292D74" }}>
+              <Icon size="big" name="cc visa" />
+            </div>
+          </div>
+        </div>
+      : null
+                }
                 <Typography variant="h5" gutterBottom>
                   {props.CardItem.data.type} Overview
                 </Typography>
@@ -128,6 +195,8 @@ const ItemOverView = props => {
             </Paper>
           </div>
         </div>
+        { isMobile? null 
+        :
         <div
           style={{
             width: isMobile ? "90%" : "30%",
@@ -191,6 +260,7 @@ const ItemOverView = props => {
             </div>
           </div>
         </div>
+        }
       </div>
       <Dialog
         fullScreen
