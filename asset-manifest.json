@@ -1,8 +1,8 @@
 {
-  "main.css": "/antobolo_uptest/static/css/main.0cfab509.chunk.css",
-  "main.js": "/antobolo_uptest/static/js/main.78514d12.chunk.js",
-  "static/css/1.0ed9b213.chunk.css": "/antobolo_uptest/static/css/1.0ed9b213.chunk.css",
-  "static/js/1.8888efa6.chunk.js": "/antobolo_uptest/static/js/1.8888efa6.chunk.js",
+  "main.css": "/antobolo_uptest/static/css/main.24cd6d9d.chunk.css",
+  "main.js": "/antobolo_uptest/static/js/main.174acddf.chunk.js",
+  "static/css/1.eae0f940.chunk.css": "/antobolo_uptest/static/css/1.eae0f940.chunk.css",
+  "static/js/1.96f283c2.chunk.js": "/antobolo_uptest/static/js/1.96f283c2.chunk.js",
   "runtime~main.js": "/antobolo_uptest/static/js/runtime~main.923c67d6.js",
   "static/media/0.jpg": "/antobolo_uptest/static/media/0.73476783.jpg",
   "static/media/level-up.png": "/antobolo_uptest/static/media/level-up.a50ad272.png",
@@ -18,10 +18,10 @@
   "static/media/8.jpeg": "/antobolo_uptest/static/media/8.10b775cc.jpeg",
   "static/media/9.jpeg": "/antobolo_uptest/static/media/9.565ad4a3.jpeg",
   "static/media/10.jpeg": "/antobolo_uptest/static/media/10.fe349e85.jpeg",
-  "static/media/material-icons.css": "/antobolo_uptest/static/media/MaterialIcons-Regular.a37b0c01.ttf",
+  "static/media/material-icons.css": "/antobolo_uptest/static/media/MaterialIcons-Regular.012cf6a1.woff",
   "static/media/all.min.css": "/antobolo_uptest/static/media/fa-solid-900.c2801fb4.svg",
-  "static/media/mdb.css": "/antobolo_uptest/static/media/Roboto-Bold.e31fcf18.ttf",
+  "static/media/mdb.css": "/antobolo_uptest/static/media/arrow_right.8ef6a08c.svg",
   "index.html": "/antobolo_uptest/index.html",
-  "precache-manifest.19d4529f93e65ae745e2c044d951face.js": "/antobolo_uptest/precache-manifest.19d4529f93e65ae745e2c044d951face.js",
+  "precache-manifest.403056284ea7731dfbeb7a146c50ab36.js": "/antobolo_uptest/precache-manifest.403056284ea7731dfbeb7a146c50ab36.js",
   "service-worker.js": "/antobolo_uptest/service-worker.js"
 }
