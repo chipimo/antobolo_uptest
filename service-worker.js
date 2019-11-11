@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/antobolo_/precache-manifest.161742e6845a2f0cc5c07d21b8419242.js"
+  "/antobolo_/precache-manifest.5291843a110098d760b895536b44eee8.js"
 );
 
 workbox.clientsClaim();
