@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/antobolo/precache-manifest.7c5d9131c9a92f52f87f0f8f4f1508b8.js"
+  "/antobolo_uptest/precache-manifest.19d4529f93e65ae745e2c044d951face.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/antobolo/index.html", {
+workbox.routing.registerNavigationRoute("/antobolo_uptest/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
