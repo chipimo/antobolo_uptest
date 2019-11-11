@@ -2,7 +2,7 @@
   "name": "antobolo",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://chipimo.github.io/antobolo_uptest",
+  "homepage": "https://chipimo.github.io/antobolo_uptest/",
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
