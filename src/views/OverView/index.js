@@ -6,9 +6,6 @@ import Typography from "@material-ui/core/Typography";
 import { isMobile } from "react-device-detect";
 import { makeStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItem from "@material-ui/core/ListItem";
-import List from "@material-ui/core/List";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -195,7 +192,7 @@ const ItemOverView = props => {
             </Paper>
           </div>
         </div>
-        { isMobile? null 
+        { isMobile? null
         :
         <div
           style={{
@@ -288,14 +285,14 @@ const ItemOverView = props => {
         </AppBar>
 
         <div>
-        
+
           <PDFViewer
             document={{
               url: "https://arxiv.org/pdf/quant-ph/0410100.pdf"
             }}
           />
         </div>
-        
+
       </Dialog>
     </div>
   );
