@@ -41,9 +41,9 @@
     "shortid": "^2.2.14"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --max_old_space_size=4096 start",
     "build:prod": "cross-env REACT_APP_BASENAME=/demo/shards-dashboard-lite-react REACT_APP_GAID=UA-115105611-1 npm run build",
-    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
